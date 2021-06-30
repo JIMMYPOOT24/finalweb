@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Storage;
 use PharIo\Manifest\Url;
 use Symfony\Component\HttpKernel\HttpCache\Store;
 
+use function PHPUnit\Framework\returnValue;
+
 class DatosEmpresaController extends Controller
 {
     /**
@@ -88,34 +90,40 @@ class DatosEmpresaController extends Controller
 
         //validaciones para que solo se pueda subir una imagen 
         $request->validate([
-            'file' => 'required|image|max:2048'
+            'file' => 'image|max:2048'
         ]);
 
-        $imagen = $request->file('file');  //Solicitar archivo
-        $nombre = $imagen->getClientOriginalName(); // Solicitar Nombre
-        $imagen->move(public_path("images"), $nombre); // Mover imagen a carpeta
 
-        /* 
-            Guardar el archivo en store y guardar la ruta del archivo en la base
+        if ($request->hasFile('file')) {
 
-        $imagen = $request->file('file')->store('public/imagenes');
-        $url = Storage::url($imagen);  */
+            $imagen = $request->file('file');  //Solicitar archivo
+            $nombre = $imagen->getClientOriginalName(); // Solicitar Nombre
+            $imagen->move(public_path("images"), $nombre); // Mover imagen a carpeta   
 
 
-        $datoempresa = mdatosempresa::find($id);
-
-
-
-        $datoempresa->descripcion = $request->get('descripcion');
-        $datoempresa->mision = $request->get('mision');
-        $datoempresa->vision = $request->get('vision');
-        $datoempresa->urllogo = $nombre; //Guardar solo el nombre de la imagen
-        $datoempresa->slogan = $request->get('slogan');
-        $datoempresa->url_curriculum = $request->get('url_curriculum');
-        $datoempresa->icon_mision = $request->get('icon_mision');
-        $datoempresa->icon_vision = $request->get('icon_vision');
-        $datoempresa->save();
-        return redirect('/datosempresa');
+            $datoempresa = mdatosempresa::find($id);
+            $datoempresa->descripcion = $request->get('descripcion');
+            $datoempresa->mision = $request->get('mision');
+            $datoempresa->vision = $request->get('vision');
+            $datoempresa->slogan = $request->get('slogan');
+            $datoempresa->imagenbanner = $nombre; //Guardar solo el nombre de la imagen
+            $datoempresa->url_curriculum = $request->get('url_curriculum');
+            $datoempresa->icon_mision = $request->get('icon_mision');
+            $datoempresa->icon_vision = $request->get('icon_vision');
+            $datoempresa->save();
+            return redirect('/datosempresa');
+        } else {
+            $datoempresa = mdatosempresa::find($id);
+            $datoempresa->descripcion = $request->get('descripcion');
+            $datoempresa->mision = $request->get('mision');
+            $datoempresa->vision = $request->get('vision');
+            $datoempresa->slogan = $request->get('slogan');
+            $datoempresa->url_curriculum = $request->get('url_curriculum');
+            $datoempresa->icon_mision = $request->get('icon_mision');
+            $datoempresa->icon_vision = $request->get('icon_vision');
+            $datoempresa->save();
+            return redirect('/datosempresa');
+        }
     }
 
     /**

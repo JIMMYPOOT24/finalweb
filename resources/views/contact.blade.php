@@ -28,7 +28,9 @@
         <div class="container mx-auto px-4 py-20 relative">
             <div class="flex flex-wrap -mx-4">
                 <div class="px-4 w-full md:w-10/12 lg:w-full">
-                    <h4 class="mb-16 text-4xl  font-normal text-center">Si desea más información, complete este
+                    <h4 class="mb-16 text-bold text-2xl md:text-4xl font-normal text-center">Si desea más
+                        información,complete
+                        este
                         formulario. Nos pondremos en contacto con usted a la brevedad posible</h4>
                 </div>
             </div>
@@ -37,32 +39,30 @@
 
             <form class="formulario-contacto" action="{{route('contactanos.store')}}" method="POST">
                 @csrf
-                <div class="mb-6 flex px-4 w-full md:w-6/12 lg:w-6/12">
-                    <div class="px-2 w-full md:w-6/12 lg:w-6/12">
-                        <div class="mb-6 ">
-                            <label class="block font-bold mb-2 text-white" for="inputEmail">Correo Electrónico</label>
-                            <input
-                                class="appearance-none border-2 border-white text-black focus:shadow-lg outline-none px-5 py-3 w-full"
-                                placeholder="Escribe tu correo" type="email" id="inputEmail" name="correo">
-                        </div>
-                        @error('correo')
-                        <p><strong>{{$message}}</strong></p>
-                        @enderror
-
-                    </div>
-                    <div class="px-2 w-full md:w-6/12 lg:w-6/12">
-                        <div class="mb-6">
-                            <label class="block font-bold mb-2 text-white" for="inputNumber">Numero de telefono</label>
-                            <input
-                                class="appearance-none border-2 border-white text-black focus:shadow-lg outline-none px-5 py-3 w-full"
-                                placeholder="Escribe tu numero" type="tel" id="inputNumber" name="telefono">
-                        </div>
-                        @error('telefono')
-                        <p><strong>{{$message}}</strong></p>
-                        @enderror
-
-                    </div>
+                <div class="mb-6 px-8 w-full md:w-6/12 lg:w-6/12">
+                    <label class="block font-bold mb-2 text-white" for="inputEmail">Correo Electrónico</label>
+                    <input
+                        class="appearance-none border-2 border-white text-black focus:shadow-lg outline-none px-5 py-3 w-full"
+                        placeholder="Escribe tu correo" type="email" id="inputEmail" name="correo">
                 </div>
+
+                @error('correo')
+                <p><strong>{{$message}}</strong></p>
+                @enderror
+
+
+                <div class="mb-6 px-8 w-full md:w-6/12 lg:w-6/12">
+                    <label class="block font-bold mb-2 text-white" for="inputNumber">Numero de telefono</label>
+                    <input
+                        class="appearance-none border-2 border-white text-black focus:shadow-lg outline-none px-5 py-3 w-full"
+                        placeholder="Escribe tu numero" type="text" id="inputNumber" name="telefono">
+                </div>
+
+                @error('telefono')
+                <p><strong>{{$message}}</strong></p>
+
+                @enderror
+
                 <div class="mb-6 px-8 w-full md:w-6/12 lg:w-6/12">
                     <label class="block font-bold mb-2 text-white" for="inputName">Nombre y apellido</label>
                     <input

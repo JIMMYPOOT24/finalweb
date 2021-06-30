@@ -33,7 +33,7 @@
   <section class="bg-gray-800 relative text-white p-3">
     <a href="/">
       <img class="absolute h-full inset-0 object-center object-cover w-full opacity-70 "
-        src="images/{{$datos1->url_img1}}" alt="fondo seccion" />
+        src="images/{{$datos1->imagenbanner}}" alt="fondo seccion" />
     </a>
 
     <div class="container mx-auto px-8 py-10 relative">
@@ -105,7 +105,8 @@
                 <!-- Termina icono -->
 
                 <!-- Inicia texto -->
-                <p class="ml-20 text-lg leading-10 font-bold text-black">{{$iconservicios1->nombre_servicio}}</p>
+                <p class="ml-20 text-justify text-base md:text-xl leading-10 font-bold text-black">
+                  {{$iconservicios1->nombre_servicio}}</p>
               </dt>
 
             </div>

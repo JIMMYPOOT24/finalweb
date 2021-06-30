@@ -239,29 +239,29 @@ return [
             'text'        => 'Vista Inicio',
             'url'         => 'datosempresa',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 1,
-            'label_color' => 'success',
+            'label'       => false,
+            'label_color' => false,
         ],
         [
             'text'        => 'Vista Nosotros',
-            'url'         => '',
+            'url'         => 'datosnosotros',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 2,
-            'label_color' => 'success',
+            'label'       => false,
+            'label_color' => false,
         ],
         [
             'text'        => 'Vista Servicios',
             'url'         => '',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 3,
-            'label_color' => 'success',
+            'label'       => false,
+            'label_color' => false,
         ],
         [
             'text'        => 'Vista Proyectos',
             'url'         => '',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'label'       => false,
+            'label_color' => false,
         ],
         ['header' => 'account_settings'],
         [
@@ -269,7 +269,7 @@ return [
             'url'  => 'user/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
-       
+
     ],
 
     /*

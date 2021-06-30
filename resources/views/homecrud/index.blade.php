@@ -3,21 +3,20 @@
 @section('title', 'Crud')
 
 @section('content_header')
-<h1>Vista Home</h1>
+<h1 class="text-center">Vista Home</h1>
 @stop
 
 @section('content')
 {{-- <a href="datosempresa/create" class="btn btn-primary"> CREAR</a> --}}
-
-<div class="table-responsive ">
-    <table class="table table-dark table-striped">
+<div class="container table-responsive table-responsive-sm table-responsive-lg table-responsive-md">
+    <table class="table table-dark table-striped table-responsive">
         <thead class="text-Dark">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Misión</th>
                 <th scope="col">Visión</th>
-                <th scope="col">Url-Logo</th>
+                <th scope="col">Imagen-banner</th>
                 <th scope="col">Eslogan</th>
                 <th scope="col">Url-Curriculum</th>
                 <th scope="col">Icono-Visión</th>
@@ -32,7 +31,7 @@
                 <td>{{$datoempresa->descripcion}}</td>
                 <td>{{$datoempresa->mision}}</td>
                 <td>{{$datoempresa->vision}}</td>
-                <td>{{$datoempresa->urllogo}}</td>
+                <td>{{$datoempresa->imagenbanner}}</td>
                 <td>{{$datoempresa->slogan}}</td>
                 <td>{{$datoempresa->url_curriculum}}</td>
                 <td>{{$datoempresa->icon_mision}}</td>
@@ -49,12 +48,17 @@
         </tbody>
         </thead>
     </table>
-    @stop
+</div>
+@stop
 
-    @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-    @stop
+@section('css')
+<link rel="stylesheet" href="{{ asset('../css/stylebanner.css') }}" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    @section('js')
+@stop
 
-    @stop
+@section('js')
+
+
+@stop

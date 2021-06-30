@@ -32,7 +32,7 @@
         <textarea type="text" name="vision" id="vision" class="form-control">{{$datoempresa->vision}}</textarea>
 
         <div class="mb-3">
-            <label for="" class="form-label fw-bold text-primary">Url-Logo</label>
+            <label for="" class="form-label fw-bold text-primary">Url-Banner</label>
 
             <input type="file" name="file" id="urllogo" accept="image/*">
             <br>

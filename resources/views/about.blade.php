@@ -40,7 +40,7 @@
       <div class="flex flex-wrap -mx-4">
         <div class="mx-auto px-4 text-center w-full lg:w-8/12">
 
-          <h1 class="font-semibold mb-4 text-6xl">¿Quienes somos?</h1>
+          <h1 class="font-semibold mb-4 text-2xl md:text-6xl">¿Quienes somos?</h1>
         </div>
       </div>
     </div>
@@ -60,21 +60,16 @@
       <div class="container mx-auto pg-lib-item px-4">
         <div class="flex flex-wrap -mx-4">
           <div class="pg-empty-placeholder px-4 w-full md:w-1/2">
-            <h1 class=" mb-6  text-justify text-xl text-black ">{{$datos2->descripcion1}}</h1>
+            <h1 class=" mb-6 text-base	 md:text-2xl  text-justify text-black ">{{$datos2->descripcion1}}</h1>
 
-            <h1 class=" mb-6  text-justify text-xl text-black ">{{$datos2->descripcion2}} </h1>
+
 
           </div>
           <div class="pg-empty-placeholder px-4 w-full md:w-1/2">
-
-            <h1 class="mb-auto text-justify  text-xl text-black ">Jorrifadi instalaciones y proyectos es una empresa que
-              se comprometida con la investigación, desarrollo y aplicación de nuevas tecnologías que permitan la máxima
-              optimización de los recursos de inversión, así como la plusvalía para los usuarios finales.
-            </h1>
-
+            <h1 class=" mb-6  text-base	 md:text-2xl text-justify text-black ">{{$datos2->descripcion2}} </h1>
             <img class="mx-auto mt-8" src="{{ url('iconos/pdf64px.png') }}">
 
-            <div class="relative py-10 text-center">
+            <div class=" container relative py-10 text-center">
               <button
                 class="transition duration-500 ease-in-out bg-blue-600 hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110 ">
                 <a href="recursos/@foreach ($datos1 as $dato){{$dato->url_curriculum}}@endforeach"
@@ -96,58 +91,39 @@
 
   <section>
     <div>
-      <H1 class="mt-5 text-4xl leading-8 text-center  tracking-tight text-blue-900 font-semibold py-2"> Certificaciones
-      </H1>
+      <h1 class="mt-5 text-4xl leading-8 text-center  tracking-tight text-blue-900 font-semibold py-2"> Certificaciones
+      </h1>
 
       <span class=" bg-yellow-600 block h-1 mx-auto w-40 uppercase mt-4"></span>
     </div>
   </section>
 
 
-  <section class="about mt-4">
-    <div id="carousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-controls">
-        <ol class="carousel-indicators">
-          <li data-target="#carousel" data-slide-to="0" class="active" style="background-image:url('images/CFE2.PNG')">
-          </li>
-          <li data-target="#carousel" data-slide-to="1" style="background-image:url('images/covid.jpg')"></li>
-          <li data-target="#carousel" data-slide-to="2" style="background-image:url('images/CFE2.PNG')"></li>
-
-        </ol>
-        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+  <section class="mt-4 p-0 ">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class=" carousel-inner ">
+        @forelse ($banner as $item)
+        <div class="carousel-item @if ($loop->index==0) active  @endif  ">
+          <div class="opacity-50 container w-100 h-50 p-0 ">
+            <img src="/images/{{$item->url_img}}">
+          </div>
+          <div class="centrado text-bold text-xl md:text-6xl text-center">{{$item->descripcion}}
+          </div>
+        </div>
+        @empty
+        @endforelse
       </div>
-
-      <div class="carousel-inner">
-        <div class="carousel-item active" style="background-image:url('images/{{$datos2->imgslaider1}}')">
-          <div class="container">
-            <h2>Contratista Confiable</h2>
-            <p></p>
-          </div>
-        </div>
-        <div class="carousel-item" style="background-image:url('images/{{$datos2->imgslaider2}}')">
-          <div class="container">
-            <h2>Retorno seguro al trabajo</h2>
-          </div>
-        </div>
-        <div class="carousel-item" style="background-image:url('images/{{$datos2->imgslaider3}}')">
-          <div class="container">
-            <h2>Registro SISPROTER</h2>
-            <p></p>
-          </div>
-        </div>
-
-      </div>
-
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-  </section>
 
+  </section>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -170,30 +146,30 @@
 
   {{-- Inicia Seccion mision y vision  --}}
 
-  <section class="bg-gray-50 font-light pg-lib-item py-8 text-gray-500">
-    <div class="container mx-auto px-4 relative pg-lib-item" data-pg-class-style="container"
-      data-pg-class-style-inline="">
-      <div class="flex flex-wrap -mx-60  justify-center" data-pg-class-style="column_parent"
-        data-pg-class-style-inline=" justify-center">
+  <section class="bg-gray-100 border-b py-4 text-gray-500">
+    <div class="container mx-auto px-4">
+      <div class="-mx-12 flex flex-wrap justify-center">
 
-        <div class="p-4 w-full md:w-6/12 lg:w-4/12">
-          <div class="bg-white flex flex-col h-full shadow-lg">
-            <div class="p-4 text-lg ">
+        <div class="p-4 w-full md:w-6/12 lg:w-6/12">
+          <div class="block group pb-4 pt-4 px-6 relative bg-white rounded-md">
+            <div class="p-4 text-lg">
               <h4 class="mb-4 text-3xl text-yellow-500  font-semibold text-center py-3">Misión</h4>
               <img class="mx-auto" src="{{ url('iconos/mision-128px.png') }}">
-              <h1 class="text-black text-justify text-2xl py-5 u-font-family-system-ui">@foreach ($datos1 as
+              <h1 class="text-black text-justify text-base	 md:text-2xl py-5 u-font-family-system-ui">
+                @foreach ($datos1 as
                 $dato){{$dato->mision}}@endforeach</h1>
 
             </div>
           </div>
         </div>
 
-        <div class="p-4 w-full md:w-6/12 lg:w-4/12">
-          <div class="bg-white flex flex-col h-full shadow-lg">
+        <div class="p-4 w-full md:w-6/12 lg:w-6/12">
+          <div class="block group pb-4 pt-4 px-16 relative bg-white rounded-md">
             <div class="p-4 text-lg ">
               <h4 class="mb-4 text-3xl text-yellow-500 font-semibold text-center py-3 ">Visión</h4>
               <img class="mx-auto" src="{{ url('iconos/vision-128px.png') }}">
-              <h1 class="text-black text-justify text-2xl py-5 u-font-family-system-ui">@foreach ($datos1 as
+              <h1 class="text-black text-justify text-base	md:text-2xl py-5 u-font-family-system-ui">@foreach ($datos1
+                as
                 $dato){{$dato->vision}}@endforeach</h1>
             </div>
           </div>
