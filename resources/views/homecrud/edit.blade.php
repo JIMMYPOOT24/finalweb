@@ -33,7 +33,7 @@
         <br>
         <div class="mb-3">
             <label for="" class="form-label fw-bold text-primary">Imagen-Banner</label>
-
+            <br>
             <input type="file" name="file" id="urllogo" accept="image/*">
             <br>
             @error('file')
@@ -47,9 +47,13 @@
         <input type="text" name="slogan" id="slogan" class="form-control" value="{{$datoempresa->slogan}}">
     </div>
     <div class="mb-3">
-        <label for="" class="form-label fw-bold text-primary">Url-Curriculum</label>
-        <input type="text" name="url_curriculum" id="url_curriculum" class="form-control"
-            value="{{$datoempresa->url_curriculum}}">
+        <label for="" class="form-label fw-bold text-primary">Curriculum</label>
+        <br>
+        <input type="file" name="file" id="url_curriculum" accept="image/*">
+        <br>
+        @error('file')
+        <small class="text-danger">{{$message}}</small>
+        @enderror
     </div>
     <div class="mb-3">
         <label for="" class="form-label fw-bold text-primary">Icono-Visión</label>
