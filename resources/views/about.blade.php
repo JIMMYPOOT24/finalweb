@@ -91,38 +91,41 @@
 
   <section>
     <div>
-      <h1 class="mt-5 text-4xl leading-8 text-center  tracking-tight text-blue-900 font-semibold py-2"> Certificaciones
-      </h1>
+      <H1 class="mt-5 text-4xl leading-8 text-center  tracking-tight text-blue-900 font-semibold py-2"> Certificaciones
+      </H1>
 
       <span class=" bg-yellow-600 block h-1 mx-auto w-40 uppercase mt-4"></span>
     </div>
   </section>
 
 
-  <section class="mt-4 p-0 ">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class=" carousel-inner ">
+  <section class="about mt-4">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-controls">
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <div class="carousel-inner">
         @forelse ($banner as $item)
-        <div class="carousel-item @if ($loop->index==0) active  @endif  ">
-          <div class="opacity-50 container w-100 h-50 p-0 ">
-            <img src="/images/{{$item->url_img}}">
-          </div>
-          <div class="centrado text-bold text-xl md:text-6xl text-center">{{$item->descripcion}}
+        <div class="carousel-item @if ($loop->index==0) active  @endif"
+          style="background-image:url('images/{{ $item->url_img}}')">
+          <div class="container">
+            <h2>{{$item->descripcion}}</h2>
+            <p></p>
           </div>
         </div>
         @empty
         @endforelse
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
 
+    </div>
   </section>
 
   <!-- Optional JavaScript -->

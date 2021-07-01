@@ -414,41 +414,16 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="mx-auto mt-4" src="{{ url('iconos/clientesB-64px.png') }}">
+        @forelse ($bannercliente as $item)
+        <div class="carousel-item  @if ($loop->index==0) active  @endif">
+          <img class="mx-auto mt-4" src="/iconos/{{$item->url_logo}}">
           <div class="container">
-            <h1>Trabajo garantizado y de confianza</h1>
-            <p>{{$datoscliente1->nombre_cliente}}</p>
+            <h1>{{$item->descripcion}}</h1>
+            <p>{{$item->nombre_cliente}}</p>
           </div>
         </div>
-        <div class="carousel-item ">
-          <img class="mx-auto mt-4" src="{{ url('iconos/clientesB-64px.png') }}">
-          <div class="container">
-            <h1> Me encanto el trabajo de Jorrifadi y su seriedad en el trabajo </h1>
-            <p>{{$datoscliente2->nombre_cliente}}</p>
-          </div>
-        </div>
-        <div class="carousel-item ">
-          <img class="mx-auto mt-4" src="{{ url('iconos/clientesB-64px.png') }}">
-          <div class="container">
-            <h1> Calidad de trabajo garantizado </h1>
-            <p>{{$datoscliente3->nombre_cliente}}</p>
-          </div>
-        </div>
-        <div class="carousel-item ">
-          <img class="mx-auto mt-4" src="{{ url('iconos/clientesB-64px.png') }}">
-          <div class="container">
-            <h1> Encantado con la calidad de trabajo </h1>
-            <p>{{$datoscliente4->nombre_cliente}}</p>
-          </div>
-        </div>
-        <div class="carousel-item ">
-          <img class="mx-auto mt-4" src="{{ url('iconos/clientesB-64px.png') }}">
-          <div class="container">
-            <h1>Nos han sorprendido con su trabajo y confianza</h1>
-            <p>{{$datoscliente5->nombre_cliente}}</p>
-          </div>
-        </div>
+        @empty
+        @endforelse
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

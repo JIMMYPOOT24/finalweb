@@ -44,6 +44,7 @@
                 <a href=""><button>Editar</button></a>
             </div>
         </article>
+    </main>
 </div>
 @stop
 
