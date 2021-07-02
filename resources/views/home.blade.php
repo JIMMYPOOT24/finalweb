@@ -46,7 +46,7 @@
 
           <h4 class="mb-1 text-3xl font-semibold uppercase">¿QUIENES SOMOS?</h4>
           <h4 class="mb-4  text-5xl text-yellow-600 uppercase">________</h4>
-          <p class="mb-6 text-2xl  text-justify u-font-family-system-ui">@foreach ($datos as
+          <p class="mb-6 text-justify text-base	md:text-2xl u-font-family-system-ui">@foreach ($datos as
             $dato){{$dato->descripcion}}@endforeach</p>
 
 
@@ -54,17 +54,14 @@
 
           <!--Inicia  Boton -->
 
-          <div class="container ">
-            <div class="relative h-32 w-90 ">
-              <div class="absolute bottom-15 right-0 h-16 w-90 ">
-                <a href="recursos/@foreach ($datos as $dato){{$dato->url_curriculum}}@endforeach"
-                  target="_blank"><button
-                    class="font-bold uppercase px-8 py-3 rounded bg-yellow-500 hover:bg-red-700 hover:text-white  text-white max-w-max shadow-sm hover:shadow-lg">CURRICULUM</button></a>
-                <a href="{{route('nosotros')}}"><button
-                    class="font-bold border-2 border-white uppercase px-8 py-3 rounded hover:bg-red-700 hover:text-white max-w-max shadow-sm hover:shadow-lg text-white">CONÓCENOS</button>
-                </a>
-              </div>
-            </div>
+          <div class="container align-content-center">
+            <a href="recursos/@foreach ($datos as $dato){{$dato->url_curriculum}}@endforeach" target="_blank">
+              <button
+                class="font-bold uppercase px-8 py-3 rounded bg-yellow-500 hover:bg-red-700 hover:text-white  text-white max-w-max shadow-sm hover:shadow-lg">CURRICULUM</button></a>
+            <a href="{{route('nosotros')}}">
+              <button
+                class="font-bold border-2 border-white uppercase px-8 py-3 rounded hover:bg-red-700 hover:text-white max-w-max shadow-sm hover:shadow-lg text-white">CONÓCENOS</button>
+            </a>
           </div>
           <!-- Termina Boton -->
         </div>
@@ -76,6 +73,8 @@
   {{-- Termina Seccion Imagenes y texto quienes somos  --}}
 
 
+
+  {{-- Seccion principales servicios--}}
 
   {{-- Seccion principales servicios--}}
 
@@ -105,7 +104,7 @@
                 <!-- Termina icono -->
 
                 <!-- Inicia texto -->
-                <p class="ml-20 text-justify text-base md:text-xl leading-10 font-bold text-black">
+                <p class="ml-20 leading-13 text-base	md:text-xl font-bold text-black">
                   {{$iconservicios1->nombre_servicio}}</p>
               </dt>
 
@@ -126,7 +125,8 @@
 
                 <!-- Inicia texto -->
 
-                <p class="ml-20 text-lg leading-13 font-bold text-black">{{$iconservicios2->nombre_servicio}}</p>
+                <p class="ml-20 leading-13 text-base	md:text-xl font-bold text-black">
+                  {{$iconservicios2->nombre_servicio}}</p>
               </dt>
             </div>
 
@@ -152,7 +152,8 @@
 
                 <!-- inicia Texto -->
 
-                <p class="ml-20 text-lg leading-10 font-bold text-black">{{$iconservicios3->nombre_servicio}}</p>
+                <p class="ml-20 leading-13 text-base	md:text-xl font-bold text-black">
+                  {{$iconservicios3->nombre_servicio}}</p>
               </dt>
             </div>
 
@@ -177,7 +178,8 @@
 
                 <!-- inicia Texto -->
 
-                <p class="ml-20 text-lg leading-13 font-bold text-black">{{$iconservicios4->nombre_servicio}}</p>
+                <p class="ml-20 leading-13 text-base	md:text-xl font-bold text-black">
+                  {{$iconservicios4->nombre_servicio}}</p>
               </dt>
             </div>
 
@@ -200,7 +202,8 @@
 
                 <!-- inicia Texto -->
 
-                <p class="ml-20 text-lg leading-10 font-bold text-black">{{$iconservicios5->nombre_servicio}}</p>
+                <p class="ml-20 leading-13 text-base	md:text-xl font-bold text-black">
+                  {{$iconservicios5->nombre_servicio}}</p>
               </dt>
             </div>
 
@@ -226,7 +229,8 @@
 
                 <!-- Inicia  texto -->
 
-                <p class="ml-20 text-lg leading-10 font-bold text-black">{{$iconservicios6->nombre_servicio}}</p>
+                <p class="ml-20 leading-13 text-base	md:text-xl font-bold text-black">
+                  {{$iconservicios6->nombre_servicio}}</p>
               </dt>
             </div>
 
@@ -252,6 +256,7 @@
     </div>
 
   </section>
+  {{-- Termina Seccion principales servicios--}}
   {{-- Termina Seccion principales servicios--}}
 
 
@@ -287,20 +292,22 @@
 
         <div class="p-4 w-full md:w-6/12 lg:w-6/12">
           <div class="block group pb-4 pt-4 px-6 relative bg-yellow-500 rounded-md">
-            <div class="relative">
+            <div class="p-4 text-lg">
               <h4 class="mb-4 text-3xl text-blue-900 font-semibold text-center py-3">Misión</h4>
               <img class="mx-auto" src="{{ url('iconos/mision-128px-white.png') }}">
-              <h1 class="text-black text-justify text-2xl py-5 u-font-family-system-ui">{{$datos1->mision}}</h1>
+              <h1 class="text-black text-justify text-base	md:text-2xl py-5 u-font-family-system-ui">{{$datos1->mision}}
+              </h1>
             </div>
           </div>
         </div>
 
         <div class="p-4 w-full md:w-6/12 lg:w-6/12">
-          <div class="block group pb-4 pt-4 px-16 relative bg-yellow-500 rounded-md">
-            <div class="relative">
+          <div class="block group pb-4 pt-4 px-6 relative bg-yellow-500 rounded-md">
+            <div class="p-4 text-lg ">
               <h4 class="mb-4 text-3xl text-blue-900 font-semibold text-center py-3 ">Visión</h4>
-              <img class="mx-auto" src="{{ url('iconos/Vision-128px-white.png') }}">
-              <h1 class="text-black text-justify text-2xl py-5 u-font-family-system-ui">{{$datos1->vision}}</h1>
+              <img class="mx-auto" src="{{ url('iconos/vision-128px-white.png') }}">
+              <h1 class="text-black text-justify text-base	md:text-2xl py-5 u-font-family-system-ui">{{$datos1->vision}}
+              </h1>
             </div>
           </div>
         </div>
@@ -308,6 +315,9 @@
       </div>
     </div>
   </section>
+
+
+  {{-- Termina quienes somos --}}
 
 
   {{-- Termina quienes somos --}}
@@ -416,10 +426,11 @@
       <div class="carousel-inner">
         @forelse ($bannercliente as $item)
         <div class="carousel-item  @if ($loop->index==0) active  @endif">
-          <img class="mx-auto mt-4" src="/iconos/{{$item->url_logo}}">
+          <img class="mx-auto mt-4" src="/iconos/{{$item->url_imagen}}">
           <div class="container">
-            <h1>{{$item->descripcion}}</h1>
             <p>{{$item->nombre_cliente}}</p>
+            <h3>{{$item->descripcion}}</h3>
+
           </div>
         </div>
         @empty

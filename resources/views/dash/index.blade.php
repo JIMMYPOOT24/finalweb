@@ -10,15 +10,16 @@
 <div class="container">
     <main class="grid">
         <article>
-            <img src="/images/proyectmaroma.png" alt="">
+            <img src="/images/sliderhome.jpg" alt="">
             <div class="text">
                 <h3>INICIO</h3>
-                <p>Puedes realizar los cambios a tu preferencia de la vista Inicio</p>
+                <p>Usted puede realizar los cambios de su preferencia de la vista <b>Inicio</b> en el siguiente enlace.
+                </p>
                 <a href="/datosempresa"><button>Editar</button></a>
             </div>
         </article>
         <article>
-            <img src="/images/proyectmaroma.png" alt="">
+            <img src="/images/sliderhome.jpg" alt="">
             <div class="text">
                 <h3>NOSOTROS</h3>
                 <p>Puedes realizar los cambios a tu preferencia de la vista Nosotros</p>
@@ -27,7 +28,7 @@
         </article>
 
         <article>
-            <img src="/images/proyectmaroma.png" alt="">
+            <img src="/images/sliderhome.jpg" alt="">
             <div class="text">
                 <h3>SERVICIOS</h3>
                 <p>Puedes realizar los cambios a tu preferencia de la vista Servicios</p>
@@ -37,7 +38,7 @@
 
 
         <article>
-            <img src="/images/proyectmaroma.png" alt="">
+            <img src="/images/sliderhome.jpg" alt="">
             <div class="text">
                 <h3>PROYECTOS</h3>
                 <p>Puedes realizar los cambios a tu preferencia de la vista Proyectos</p>

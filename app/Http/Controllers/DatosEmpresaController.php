@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\mcliente;
 use Illuminate\Http\Request;
 use  App\Models\mdatosempresa;
 use Illuminate\Support\Facades\Storage;
@@ -21,7 +22,11 @@ class DatosEmpresaController extends Controller
     {
 
         $datosempresa = mdatosempresa::all();
-        return view('homecrud.index')->with('datosempresa', $datosempresa);
+        $carrusel = mcliente::all();
+
+        // return view('homecrud.index')->with('datosempresa', $datosempresa);
+
+        return view('homecrud.index', compact('datosempresa', 'carrusel'));
     }
 
     /**
@@ -106,8 +111,7 @@ class DatosEmpresaController extends Controller
             $datoempresa->mision = $request->get('mision');
             $datoempresa->vision = $request->get('vision');
             $datoempresa->slogan = $request->get('slogan');
-            $datoempresa->imagenbanner = $nombre; //Guardar solo el nombre de la imagen
-            $datoempresa->url_curriculum = $request->get('url_curriculum');
+            $datoempresa->imagenbanner = $nombre; //Guardar solo el nombre de la imagen , FALTA CURRICULUM
             $datoempresa->icon_mision = $request->get('icon_mision');
             $datoempresa->icon_vision = $request->get('icon_vision');
             $datoempresa->save();
@@ -118,7 +122,6 @@ class DatosEmpresaController extends Controller
             $datoempresa->mision = $request->get('mision');
             $datoempresa->vision = $request->get('vision');
             $datoempresa->slogan = $request->get('slogan');
-            $datoempresa->url_curriculum = $request->get('url_curriculum');
             $datoempresa->icon_mision = $request->get('icon_mision');
             $datoempresa->icon_vision = $request->get('icon_vision');
             $datoempresa->save();

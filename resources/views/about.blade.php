@@ -40,7 +40,7 @@
       <div class="flex flex-wrap -mx-4">
         <div class="mx-auto px-4 text-center w-full lg:w-8/12">
 
-          <h1 class="font-semibold mb-4 text-2xl md:text-6xl">¿Quienes somos?</h1>
+          <h1 class="font-semibold mb-4 text-2xl md:text-6xl">{{$datos2->titulo}}</h1>
         </div>
       </div>
     </div>
@@ -167,7 +167,7 @@
         </div>
 
         <div class="p-4 w-full md:w-6/12 lg:w-6/12">
-          <div class="block group pb-4 pt-4 px-16 relative bg-white rounded-md">
+          <div class="block group pb-4 pt-4 px-6 relative bg-white rounded-md">
             <div class="p-4 text-lg ">
               <h4 class="mb-4 text-3xl text-yellow-500 font-semibold text-center py-3 ">Visión</h4>
               <img class="mx-auto" src="{{ url('iconos/vision-128px.png') }}">
@@ -185,6 +185,7 @@
 
 
   {{-- Ternina Seccion mision y vision  --}}
+
 
 
 

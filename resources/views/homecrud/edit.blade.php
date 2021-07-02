@@ -46,15 +46,17 @@
         <label for="" class="form-label fw-bold text-primary">Eslogan</label>
         <input type="text" name="slogan" id="slogan" class="form-control" value="{{$datoempresa->slogan}}">
     </div>
-    <div class="mb-3">
+
+    {{-- PONER EL DE CURRICULUM --}}
+    {{-- <div class="mb-3">
         <label for="" class="form-label fw-bold text-primary">Curriculum</label>
         <br>
         <input type="file" name="file" id="url_curriculum" accept="image/*">
         <br>
         @error('file')
         <small class="text-danger">{{$message}}</small>
-        @enderror
-    </div>
+    @enderror
+    </div> --}}
     <div class="mb-3">
         <label for="" class="form-label fw-bold text-primary">Icono-Visión</label>
         <input type="text" name="icon_mision" id="icon_mision" class="form-control"

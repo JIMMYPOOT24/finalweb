@@ -6,7 +6,7 @@
     align-items: center;
 }
 .grid > article {
-    background: #d6eaf8;
+    background: #f5f9fae1;
     border: none;
     box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
     border-radius: 20px;

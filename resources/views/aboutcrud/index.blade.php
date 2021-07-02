@@ -3,7 +3,7 @@
 @section('title', 'Crud')
 
 @section('content_header')
-<h1 class="text-center">Vista Home</h1>
+<h1 class="text-center">Vista Nosotros</h1>
 @stop
 
 @section('content')
@@ -13,7 +13,7 @@
     <div class="card m-4 border-0" style="width: 18rem;">
         <img src="/iconos/crudhouse.png" class="card-img-top mx-auto d-block img-fluid" alt="...">
         <div class="card-body">
-            <h5 class="p-1 fs-3">Datos Inicio</h5>
+            <h5 class="p-1 fs-3">Datos Nosotros</h5>
             <p class="card-text">Usted puede realizar los cambios de su preferencia de la vista <b>Inicio</b> en el
                 siguiente
                 boton.</p>
