@@ -32,9 +32,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/', HomeController::class)->name('index');
 
-Route::resource('datosempresa', 'App\Http\Controllers\DatosEmpresaController');
+Route::resource('homecrud', 'App\Http\Controllers\DatosEmpresaController');
+
 Route::resource('carrusel', 'App\Http\Controllers\HomeController');
-Route::resource('datosnosotros', 'App\Http\Controllers\DatosAboutController');
+
 
 Route::get('/nosotros', [AboutController::class, 'about'])->name('nosotros');
 

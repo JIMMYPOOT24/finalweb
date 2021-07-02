@@ -247,7 +247,7 @@
       <div class="relative py-10 text-center">
         <a href="{{route('servicios')}}">
           <button
-            class="uppercase bg-yellow-500 inline-block px-9 py-3 rounded text-blue-50 max-w-max shadow-sm hover:shadow-lg">Ver
+            class="uppercase bg-yellow-500 hover:bg-red-700  inline-block px-9 py-3 rounded text-blue-50 max-w-max shadow-sm hover:shadow-lg">Ver
             más</button>
         </a>
 
